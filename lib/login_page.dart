@@ -59,6 +59,22 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
+
+                    // using the custom inputFile widget
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
+                      child: Column(
+                        children: [
+                          inputFile(label: "Email"),
+                          inputFile(
+                            label: "Password",
+                            obscureText: true,
+                          ),
+                        ],
+                      ),
+                    ),
+
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Container(
@@ -83,7 +99,12 @@ class _LoginPageState extends State<LoginPage> {
                         child: MaterialButton(
                           minWidth: double.infinity,
                           height: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                             Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LandingPage()))
+                          },
                           color: const Color(0xffFFC436),
                           elevation: 0,
                           shape: RoundedRectangleBorder(
@@ -145,29 +166,31 @@ Widget inputFile({label, obscureText = false}) {
           color: Colors.black87,
         ),
       ),
-
       const SizedBox(
         height: 5,
       ),
-
       TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          contentPadding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10,),
+          contentPadding: const EdgeInsets.symmetric(
+            vertical: 0,
+            horizontal: 10,
+          ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.grey[400],
+              color: Colors.grey[400]!,
             ),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Colors.grey[400]
+              color: Colors.grey[400]!,
             ),
           ),
-
         ),
       ),
-      const SizedBox(height: 10,),
+      const SizedBox(
+        height: 10,
+      ),
     ],
   );
 }
