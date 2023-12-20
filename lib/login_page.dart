@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
+import 'package:flutter_login_signup/landing_page.dart';
+import 'package:flutter_login_signup/main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -19,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),),);
           },
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -70,10 +72,20 @@ class _LoginPageState extends State<LoginPage> {
                             label: "Password",
                             obscureText: true,
                           ),
+                      const Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text("Forgot Password?", style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 15,
+                          ),)
+                      ],
+                    ),
                         ],
                       ),
                     ),
 
+                    
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -100,10 +112,12 @@ class _LoginPageState extends State<LoginPage> {
                           minWidth: double.infinity,
                           height: 60,
                           onPressed: () {
-                             Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const LandingPage()))
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LandingPage(),
+                              ),
+                            );
                           },
                           color: const Color(0xffFFC436),
                           elevation: 0,
@@ -121,10 +135,11 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
+                    
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have an account?"),
+                        Text("Don't have an account? "),
                         Text(
                           "Sign up",
                           style: TextStyle(
@@ -148,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ],
-          )),
+          ),),
     );
   }
 }
