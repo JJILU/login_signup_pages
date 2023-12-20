@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ),
-                   const  Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Don't have an account?"),
@@ -130,4 +130,44 @@ class _LoginPageState extends State<LoginPage> {
           )),
     );
   }
+}
+
+// custom widget for text field
+Widget inputFile({label, obscureText = false}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        label,
+        style: const TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w600,
+          color: Colors.black87,
+        ),
+      ),
+
+      const SizedBox(
+        height: 5,
+      ),
+
+      TextField(
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 0,horizontal: 10,),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey[400],
+            ),
+          ),
+          border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey[400]
+            ),
+          ),
+
+        ),
+      ),
+      const SizedBox(height: 10,),
+    ],
+  );
 }
