@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/forgort_password_page.dart';
 import 'package:flutter_login_signup/landing_page.dart';
-import 'package:flutter_login_signup/main.dart';
 import 'package:flutter_login_signup/signup_page.dart';
+import 'package:flutter_login_signup/wellcome_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const HomePage(),
+                builder: (context) => const WellcomePage(),
               ),
             );
           },

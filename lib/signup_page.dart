@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_signup/landing_page.dart';
 import 'package:flutter_login_signup/login_page.dart';
 import 'package:flutter_login_signup/main.dart';
+import 'package:flutter_login_signup/wellcome_page.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -25,7 +26,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const HomePage(),
+                builder: (context) => const WellcomePage(),
               ),
             );
           },
