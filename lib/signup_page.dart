@@ -21,9 +21,13 @@ class _SignUpPageState extends State<SignUpPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            
-            Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage(),),);
-          
+            // placeholder login api end-point
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomePage(),
+              ),
+            );
           },
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -44,6 +48,16 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Column(
                 children: [
+                  Container(
+                    padding: const EdgeInsets.only(top: 100),
+                    height: 200,
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/images/register.png"),
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                  ),
                   const Text(
                     "Sign up",
                     style: TextStyle(
@@ -52,7 +66,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   Text(
                     "Create an account, It's free",
@@ -100,6 +114,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   minWidth: double.infinity,
                   height: 60,
                   onPressed: () {
+                    // placeholder login api end-point
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -122,19 +137,31 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                 ),
               ),
-             const  Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Aready have an account? "),
-                  Text(
-                    "Login",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
+                  const Text("Aready have an account? "),
+                  InkWell(
+                    onTap: () {
+                      // placeholder login api end-point
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (contex) => const LoginPage()));
+                    },
+                    child: const Text(
+                      "Login",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
                     ),
                   )
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
